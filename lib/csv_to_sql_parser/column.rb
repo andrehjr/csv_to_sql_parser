@@ -1,17 +1,19 @@
 class Column
   attr_accessor :callback, :name, :options
+
+  @@DEFAULT_CALLBACK = lambda { |value| "'#{value}'" }
   
   def initialize(name, options = {}, &block)
     @name = name
     @options = options
-    @callback = block if block_given?
+    if block_given? 
+      @callback = block
+    else
+      @callback = @@DEFAULT_CALLBACK
+    end
   end
   
   def evaluate(value)
-    if callback.nil?
-      "'#{value}'"
-    else
-      callback.call(value)
-    end
+    callback.call(value)
   end
 end
