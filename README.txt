@@ -7,7 +7,7 @@
 
 == FEATURES/PROBLEMS:
 
-* It is still pretty simple. But it's easy ;)
+* It is still pretty simple (it was made in hurry heh). But it's easy ;)
 
 == SYNOPSIS:
 
